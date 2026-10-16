@@ -1,33 +1,38 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en" dir="ltr">
 <!-- Design: twilight editorial layout; original Sela screenshot and release URL retained. -->
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Download Sela untuk Windows 10 dan 11. Lihat tampilan aplikasi, panduan instalasi, dan persyaratan sistem.">
-<title>Sela — Download untuk Windows</title>
+<meta name="description" content="Download Sela for Windows 10 and 11. See the app, installation guide, and system requirements." data-i18n-attr="content:desc">
+<title>Sela — Download for Windows</title>
 <style>
   :root { color-scheme: light; --paper: #f7f7f7; --ink: #202027; --muted: #63636c; --blue: #0069df; }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; scroll-padding-top: 28px; }
-  body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.6 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: -.02em; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.6 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans Arabic", "Microsoft YaHei", "PingFang SC", sans-serif; letter-spacing: -.02em; }
+  html[dir="rtl"] body, html[lang="ar"] body, html[lang="zh"] body { letter-spacing: 0; }
   a { color: var(--blue); text-decoration: none; }
   a:hover { text-decoration: underline; text-underline-offset: 5px; }
-  a:focus-visible, summary:focus-visible { outline: 3px solid var(--blue); outline-offset: 5px; }
+  a:focus-visible, summary:focus-visible, select:focus-visible { outline: 3px solid var(--blue); outline-offset: 5px; }
   h1, h2, p, figure { margin: 0; }
-  h1, h2 { font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif; font-weight: 400; letter-spacing: -.055em; line-height: 1.06; }
+  h1, h2 { font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, "Songti SC", "Noto Naskh Arabic", serif; font-weight: 400; letter-spacing: -.055em; line-height: 1.06; }
+  html[lang="ar"] h1, html[lang="ar"] h2, html[lang="zh"] h1, html[lang="zh"] h2 { letter-spacing: 0; line-height: 1.25; }
   h2 { font-size: clamp(36px, 4vw, 48px); }
   .wrap { width: min(1120px, calc(100% - 64px)); margin-inline: auto; }
-  .skip { position: absolute; top: -80px; left: 24px; z-index: 3; padding: 12px 20px; background: white; border-radius: 50px; }
+  .skip { position: absolute; top: -80px; inset-inline-start: 24px; z-index: 3; padding: 12px 20px; background: white; border-radius: 50px; }
   .skip:focus { top: 12px; }
   .hero { position: relative; padding: 26px 0 0; isolation: isolate; }
   .hero::before { content: ""; position: absolute; inset: 0 0 110px; z-index: -1; background: radial-gradient(ellipse at 80% 10%, #c3c7ef88, transparent 55%), linear-gradient(165deg, #4168ad 0%, #8b86b5 43%, #d4a4b5 73%, #ebc1a5 100%); }
   .nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 12px 14px 12px 22px; background: #fff; border: 1px solid #ffffff; border-radius: 24px; box-shadow: 0 0 0 4px #ffffff24; }
+  html[dir="rtl"] .nav { padding: 12px 22px 12px 14px; }
   .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); font-size: 23px; font-weight: 600; letter-spacing: -.06em; }
   .brand-mark { width: 31px; height: 31px; display: grid; place-items: center; border-radius: 50%; background: linear-gradient(145deg, #698de1, #9b88bb); color: white; font: italic 26px Georgia, serif; }
   .nav-links { display: flex; align-items: center; gap: 28px; }
   .nav-links a { color: var(--ink); font-size: 14px; font-weight: 500; }
   .nav-links .nav-download { background: var(--paper); padding: 10px 19px; border-radius: 50px; }
+  .lang { appearance: none; -webkit-appearance: none; border: 1px solid #dedee3; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%2363636c' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 12px center / 11px; color: var(--ink); font: 500 14px/1.2 inherit; font-family: inherit; padding: 9px 32px 9px 16px; border-radius: 50px; cursor: pointer; }
+  html[dir="rtl"] .lang { background-position: left 12px center; padding: 9px 16px 9px 32px; }
   .intro { display: grid; grid-template-columns: 1.1fr 1fr; align-items: end; gap: 80px; padding: 86px 22px 58px; color: white; }
   .release { display: inline-block; border: 1px solid #ffffff70; border-radius: 50px; padding: 5px 13px; font-size: 14px; margin-bottom: 22px; }
   h1 { font-size: clamp(58px, 6.8vw, 88px); }
@@ -46,16 +51,17 @@
   figcaption { text-align: center; margin-top: 20px; font-size: 14px; color: var(--muted); }
   .editorial { max-width: 900px; margin: 100px auto; display: grid; grid-template-columns: .85fr 1.15fr; gap: 80px; }
   .section-intro p { color: var(--muted); margin-top: 20px; max-width: 280px; }
-  .steps { margin: 0; padding-left: 24px; }
+  .steps { margin: 0; padding-inline-start: 24px; }
   .steps li { padding: 0 0 20px 12px; }
+  html[dir="rtl"] .steps li { padding: 0 12px 20px 0; }
   .steps li::marker { color: var(--muted); font-size: 14px; }
   .steps li:last-child { padding-bottom: 0; }
   strong { font-weight: 600; }
-  .filename { overflow-wrap: anywhere; }
+  .filename { overflow-wrap: anywhere; direction: ltr; unicode-bidi: isolate; }
   .system { border-top: 1px solid #dedee3; padding-top: 64px; }
   table { width: 100%; border-collapse: collapse; font-size: 15px; }
-  th, td { text-align: left; padding: 15px 0; border-bottom: 1px solid #dedee3; vertical-align: top; }
-  th { color: var(--muted); font-weight: 400; width: 45%; padding-right: 18px; }
+  th, td { text-align: start; padding: 15px 0; border-bottom: 1px solid #dedee3; vertical-align: top; }
+  th { color: var(--muted); font-weight: 400; width: 45%; padding-inline-end: 18px; }
   tr:first-child th, tr:first-child td { padding-top: 0; }
   .help { max-width: 900px; margin: 0 auto 90px; padding: 35px 40px; background: white; border-radius: 26px; }
   .help h2 { font-size: 36px; margin-bottom: 22px; }
@@ -67,7 +73,8 @@
     .wrap { width: calc(100% - 36px); }
     .hero { padding-top: 18px; }
     .nav { gap: 16px; padding: 10px 12px 10px 16px; border-radius: 22px; flex-wrap: wrap; }
-    .nav-links { gap: 16px; }
+    html[dir="rtl"] .nav { padding: 10px 16px 10px 12px; }
+    .nav-links { gap: 12px; flex-wrap: wrap; }
     .nav-links a { font-size: 14px; }
     .nav-links .nav-download { padding: 8px 12px; }
     .intro { grid-template-columns: 1fr; gap: 28px; padding: 56px 8px 40px; }
@@ -85,90 +92,231 @@
   }
   @media (max-width: 390px) {
     .nav { justify-content: center; }
-    .nav-links { width: 100%; justify-content: center; gap: 19px; }
+    .nav-links { width: 100%; justify-content: center; gap: 12px; }
     .actions { gap: 12px; }
   }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
 </head>
 <body>
-<a class="skip" href="#download">Lewati navigasi</a>
+<a class="skip" href="#download" data-i18n="skip">Skip navigation</a>
 <header class="hero">
   <div class="wrap">
-    <nav class="nav" aria-label="Navigasi utama">
-      <a class="brand" href="#download" aria-label="Sela, beranda"><span class="brand-mark" aria-hidden="true">s</span>Sela</a>
+    <nav class="nav" aria-label="Main navigation" data-i18n-attr="aria-label:navAria">
+      <a class="brand" href="#download" aria-label="Sela, home" data-i18n-attr="aria-label:brandAria"><span class="brand-mark" aria-hidden="true">s</span>Sela</a>
       <div class="nav-links">
-        <a href="#tampilan">Tampilan</a>
-        <a href="#install">Cara install</a>
-        <a class="nav-download" href="#download">Download</a>
+        <a href="#tampilan" data-i18n="navView">Preview</a>
+        <a href="#install" data-i18n="navInstall">How to install</a>
+        <a class="nav-download" href="#download" data-i18n="navDl">Download</a>
+        <select class="lang" id="lang" aria-label="Language" data-i18n-attr="aria-label:langLabel">
+          <option value="en">English</option>
+          <option value="id">Indonesia</option>
+          <option value="zh">中文</option>
+          <option value="ar">العربية</option>
+          <option value="ru">Русский</option>
+        </select>
       </div>
     </nav>
     <div class="intro" id="download">
       <div>
-        <span class="release">Sela untuk Windows · v0.1.2</span>
-        <h1>Kenalan dengan<br>Sela.</h1>
+        <span class="release" data-i18n="release">Sela for Windows · v0.1.2</span>
+        <h1 data-i18n="h1">Meet<br>Sela.</h1>
       </div>
       <div class="intro-copy">
-        <p>Aplikasi untuk Windows, siap menemani harimu. Download gratis, install dalam hitungan menit.</p>
+        <p data-i18n="lead">An app for Windows, ready to keep you company. Free to download, installs in minutes.</p>
         <div class="actions">
-          <a class="button" href="https://github.com/muhammadrifaldi65/sela_music_player/releases/download/musicplayer/Sela_0.1.2_x64-setup.exe" aria-label="Download Sela untuk Windows">
+          <a class="button" href="https://github.com/muhammadrifaldi65/sela_music_player/releases/download/musicplayer/Sela_0.1.2_x64-setup.exe" aria-label="Download Sela for Windows" data-i18n-attr="aria-label:dlAria">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 16v5h14v-5"/></svg>
-            Download untuk Windows
+            <span data-i18n="dlBtn">Download for Windows</span>
           </a>
-          <a class="secondary" href="#syarat">Persyaratan sistem</a>
+          <a class="secondary" href="#syarat" data-i18n="sysLink">System requirements</a>
         </div>
-        <div class="compatibility">Windows 10 / 11 &nbsp;·&nbsp; 64-bit</div>
+        <div class="compatibility" data-i18n="compat">Windows 10 / 11 &nbsp;·&nbsp; 64-bit</div>
       </div>
     </div>
-    <figure id="tampilan" aria-label="Tampilan aplikasi Sela">
+    <figure id="tampilan" aria-label="Sela app preview" data-i18n-attr="aria-label:figAria">
       <div class="preview">
-        <div class="preview-bar"><span>Di dalam Sela</span><span>Desktop / Windows</span></div>
-        <img src="https://github.com/user-attachments/assets/73798a40-975e-4a1d-8b33-7ed52f1e97ab" alt="Tampilan aplikasi Sela" fetchpriority="high">
+        <div class="preview-bar"><span data-i18n="previewL">Inside Sela</span><span data-i18n="previewR">Desktop / Windows</span></div>
+        <img src="https://github.com/user-attachments/assets/73798a40-975e-4a1d-8b33-7ed52f1e97ab" alt="Sela app preview" data-i18n-attr="alt:figAria" fetchpriority="high">
       </div>
-      <figcaption>Tampilan aplikasi Sela. Kenali sebelum mulai.</figcaption>
+      <figcaption data-i18n="cap">Sela app preview. Get to know it before you start.</figcaption>
     </figure>
   </div>
 </header>
 <main class="wrap">
   <section class="editorial" id="install" aria-labelledby="install-title">
     <div class="section-intro">
-      <h2 id="install-title">Mulai dari sini.</h2>
-      <p>Dari download sampai siap dibuka. Cukup ikuti langkah berikut.</p>
+      <h2 id="install-title" data-i18n="instTitle">Start here.</h2>
+      <p data-i18n="instP">From download to ready to open. Just follow these steps.</p>
     </div>
     <ol class="steps">
-      <li>Klik <a href="#download">Download untuk Windows</a> di atas.</li>
-      <li>Tunggu hingga file <strong class="filename">Sela_0.1.2_x64-setup.exe</strong> selesai diunduh.</li>
-      <li>Buka folder <strong>Downloads</strong>, lalu klik dua kali file installer.</li>
-      <li>Ikuti petunjuk instalasi sampai selesai, lalu klik <strong>Finish</strong>.</li>
-      <li>Buka <strong>Sela</strong> dari Start Menu atau ikon di Desktop.</li>
+      <li data-i18n="s1">Click <a href="#download">Download for Windows</a> above.</li>
+      <li data-i18n="s2">Wait for <strong class="filename">Sela_0.1.2_x64-setup.exe</strong> to finish downloading.</li>
+      <li data-i18n="s3">Open your <strong>Downloads</strong> folder, then double-click the installer.</li>
+      <li data-i18n="s4">Follow the installer prompts to the end, then click <strong>Finish</strong>.</li>
+      <li data-i18n="s5">Open <strong>Sela</strong> from the Start Menu or the Desktop icon.</li>
     </ol>
   </section>
   <section class="editorial system" id="syarat" aria-labelledby="system-title">
     <div class="section-intro">
-      <h2 id="system-title">Siapkan ruang<br>untuk Sela.</h2>
-      <p>Pastikan perangkatmu memenuhi persyaratan sebelum mengunduh.</p>
+      <h2 id="system-title" data-i18n="sysTitle">Make room<br>for Sela.</h2>
+      <p data-i18n="sysP">Check that your device meets the requirements before downloading.</p>
     </div>
-    <table aria-label="Persyaratan sistem Sela">
+    <table aria-label="Sela system requirements" data-i18n-attr="aria-label:tblAria">
       <tbody>
-        <tr><th scope="row">Sistem operasi</th><td>Windows 10 atau 11</td></tr>
-        <tr><th scope="row">Arsitektur</th><td>64-bit (x64)</td></tr>
-        <tr><th scope="row">RAM</th><td>Minimal 4 GB</td></tr>
-        <tr><th scope="row">Ruang kosong</th><td>Sekitar 200 MB</td></tr>
+        <tr><th scope="row" data-i18n="osK">Operating system</th><td data-i18n="osV">Windows 10 or 11</td></tr>
+        <tr><th scope="row" data-i18n="archK">Architecture</th><td>64-bit (x64)</td></tr>
+        <tr><th scope="row" data-i18n="ramK">RAM</th><td data-i18n="ramV">At least 4 GB</td></tr>
+        <tr><th scope="row" data-i18n="spK">Free space</th><td data-i18n="spV">About 200 MB</td></tr>
       </tbody>
     </table>
   </section>
   <section class="help" id="bantuan" aria-labelledby="help-title">
-    <h2 id="help-title">Butuh bantuan?</h2>
+    <h2 id="help-title" data-i18n="helpTitle">Need help?</h2>
     <details>
-      <summary>Muncul “Windows protected your PC”?</summary>
-      <p>Peringatan ini berarti Windows belum mengenali reputasi aplikasi; bukan jaminan bahwa file aman. Pastikan installer berasal dari tautan resmi di halaman ini. Jika sumber dan penerbitnya sudah kamu verifikasi, pilih <strong>More info</strong>, lalu <strong>Run anyway</strong>. Jika ragu, batalkan instalasi.</p>
+      <summary data-i18n="sum">See “Windows protected your PC”?</summary>
+      <p data-i18n="ans">This warning means Windows doesn't recognize the app's reputation yet; it doesn't guarantee the file is safe. Make sure the installer comes from the official link on this page. If you have verified the source and publisher, choose <strong>More info</strong>, then <strong>Run anyway</strong>. If in doubt, cancel the installation.</p>
     </details>
   </section>
 </main>
 <footer class="wrap">
   <a class="brand" href="#download">Sela</a>
-  <span>© 2026 Sela. Semua hak dilindungi.</span>
-  <a href="#bantuan">Bantuan instalasi</a>
+  <span data-i18n="copy">© 2026 Sela. All rights reserved.</span>
+  <a href="#bantuan" data-i18n="footHelp">Installation help</a>
 </footer>
+<script>
+(function () {
+  var T = {
+    en: {
+      title: "Sela — Download for Windows", desc: "Download Sela for Windows 10 and 11. See the app, installation guide, and system requirements.",
+      skip: "Skip navigation", navAria: "Main navigation", brandAria: "Sela, home", langLabel: "Language",
+      navView: "Preview", navInstall: "How to install", navDl: "Download",
+      release: "Sela for Windows · v0.1.2", h1: "Meet<br>Sela.",
+      lead: "An app for Windows, ready to keep you company. Free to download, installs in minutes.",
+      dlBtn: "Download for Windows", dlAria: "Download Sela for Windows", sysLink: "System requirements",
+      compat: "Windows 10 / 11 &nbsp;·&nbsp; 64-bit", figAria: "Sela app preview",
+      previewL: "Inside Sela", previewR: "Desktop / Windows", cap: "Sela app preview. Get to know it before you start.",
+      instTitle: "Start here.", instP: "From download to ready to open. Just follow these steps.",
+      s1: 'Click <a href="#download">Download for Windows</a> above.',
+      s2: 'Wait for <strong class="filename">Sela_0.1.2_x64-setup.exe</strong> to finish downloading.',
+      s3: "Open your <strong>Downloads</strong> folder, then double-click the installer.",
+      s4: "Follow the installer prompts to the end, then click <strong>Finish</strong>.",
+      s5: "Open <strong>Sela</strong> from the Start Menu or the Desktop icon.",
+      sysTitle: "Make room<br>for Sela.", sysP: "Check that your device meets the requirements before downloading.",
+      tblAria: "Sela system requirements", osK: "Operating system", osV: "Windows 10 or 11", archK: "Architecture",
+      ramK: "RAM", ramV: "At least 4 GB", spK: "Free space", spV: "About 200 MB",
+      helpTitle: "Need help?", sum: "See “Windows protected your PC”?",
+      ans: "This warning means Windows doesn't recognize the app's reputation yet; it doesn't guarantee the file is safe. Make sure the installer comes from the official link on this page. If you have verified the source and publisher, choose <strong>More info</strong>, then <strong>Run anyway</strong>. If in doubt, cancel the installation.",
+      copy: "© 2026 Sela. All rights reserved.", footHelp: "Installation help"
+    },
+    id: {
+      title: "Sela — Download untuk Windows", desc: "Download Sela untuk Windows 10 dan 11. Lihat tampilan aplikasi, panduan instalasi, dan persyaratan sistem.",
+      skip: "Lewati navigasi", navAria: "Navigasi utama", brandAria: "Sela, beranda", langLabel: "Bahasa",
+      navView: "Tampilan", navInstall: "Cara install", navDl: "Download",
+      release: "Sela untuk Windows · v0.1.2", h1: "Kenalan dengan<br>Sela.",
+      lead: "Aplikasi untuk Windows, siap menemani harimu. Download gratis, install dalam hitungan menit.",
+      dlBtn: "Download untuk Windows", dlAria: "Download Sela untuk Windows", sysLink: "Persyaratan sistem",
+      compat: "Windows 10 / 11 &nbsp;·&nbsp; 64-bit", figAria: "Tampilan aplikasi Sela",
+      previewL: "Di dalam Sela", previewR: "Desktop / Windows", cap: "Tampilan aplikasi Sela. Kenali sebelum mulai.",
+      instTitle: "Mulai dari sini.", instP: "Dari download sampai siap dibuka. Cukup ikuti langkah berikut.",
+      s1: 'Klik <a href="#download">Download untuk Windows</a> di atas.',
+      s2: 'Tunggu hingga file <strong class="filename">Sela_0.1.2_x64-setup.exe</strong> selesai diunduh.',
+      s3: "Buka folder <strong>Downloads</strong>, lalu klik dua kali file installer.",
+      s4: "Ikuti petunjuk instalasi sampai selesai, lalu klik <strong>Finish</strong>.",
+      s5: "Buka <strong>Sela</strong> dari Start Menu atau ikon di Desktop.",
+      sysTitle: "Siapkan ruang<br>untuk Sela.", sysP: "Pastikan perangkatmu memenuhi persyaratan sebelum mengunduh.",
+      tblAria: "Persyaratan sistem Sela", osK: "Sistem operasi", osV: "Windows 10 atau 11", archK: "Arsitektur",
+      ramK: "RAM", ramV: "Minimal 4 GB", spK: "Ruang kosong", spV: "Sekitar 200 MB",
+      helpTitle: "Butuh bantuan?", sum: "Muncul “Windows protected your PC”?",
+      ans: "Peringatan ini berarti Windows belum mengenali reputasi aplikasi; bukan jaminan bahwa file aman. Pastikan installer berasal dari tautan resmi di halaman ini. Jika sumber dan penerbitnya sudah kamu verifikasi, pilih <strong>More info</strong>, lalu <strong>Run anyway</strong>. Jika ragu, batalkan instalasi.",
+      copy: "© 2026 Sela. Semua hak dilindungi.", footHelp: "Bantuan instalasi"
+    },
+    zh: {
+      title: "Sela — 下载 Windows 版", desc: "下载适用于 Windows 10 和 11 的 Sela。查看应用界面、安装指南和系统要求。",
+      skip: "跳过导航", navAria: "主导航", brandAria: "Sela，首页", langLabel: "语言",
+      navView: "界面预览", navInstall: "安装方法", navDl: "下载",
+      release: "Sela Windows 版 · v0.1.2", h1: "认识<br>Sela。",
+      lead: "一款适用于 Windows 的应用，陪你度过每一天。免费下载，几分钟即可安装。",
+      dlBtn: "下载 Windows 版", dlAria: "下载 Sela Windows 版", sysLink: "系统要求",
+      compat: "Windows 10 / 11 &nbsp;·&nbsp; 64 位", figAria: "Sela 应用界面",
+      previewL: "Sela 内部", previewR: "桌面 / Windows", cap: "Sela 应用界面。开始之前，先来了解一下。",
+      instTitle: "从这里开始。", instP: "从下载到打开，只需按以下步骤操作。",
+      s1: '点击上方的<a href="#download">下载 Windows 版</a>。',
+      s2: '等待 <strong class="filename">Sela_0.1.2_x64-setup.exe</strong> 下载完成。',
+      s3: "打开<strong>下载</strong>文件夹，双击安装程序。",
+      s4: "按照安装提示操作直至完成，然后点击<strong>完成</strong>。",
+      s5: "从开始菜单或桌面图标打开 <strong>Sela</strong>。",
+      sysTitle: "为 Sela<br>留出空间。", sysP: "下载前请确认你的设备满足以下要求。",
+      tblAria: "Sela 系统要求", osK: "操作系统", osV: "Windows 10 或 11", archK: "架构",
+      ramK: "内存", ramV: "至少 4 GB", spK: "可用空间", spV: "约 200 MB",
+      helpTitle: "需要帮助？", sum: "出现“Windows 已保护你的电脑”？",
+      ans: "此提示表示 Windows 尚未识别该应用的信誉，并不能保证文件是否安全。请确认安装程序来自本页面的官方链接。如果你已核实来源和发布者，请选择<strong>更多信息</strong>，然后选择<strong>仍要运行</strong>。如有疑问，请取消安装。",
+      copy: "© 2026 Sela。保留所有权利。", footHelp: "安装帮助"
+    },
+    ar: {
+      title: "Sela — تنزيل لنظام Windows", desc: "نزّل Sela لنظام Windows 10 و11. اطّلع على واجهة التطبيق ودليل التثبيت ومتطلبات النظام.",
+      skip: "تخطَّ التنقل", navAria: "التنقل الرئيسي", brandAria: "Sela، الصفحة الرئيسية", langLabel: "اللغة",
+      navView: "المعاينة", navInstall: "طريقة التثبيت", navDl: "تنزيل",
+      release: "Sela لنظام Windows · v0.1.2", h1: "تعرّف على<br>Sela.",
+      lead: "تطبيق لنظام Windows، جاهز لمرافقتك كل يوم. تنزيل مجاني وتثبيت خلال دقائق.",
+      dlBtn: "تنزيل لنظام Windows", dlAria: "تنزيل Sela لنظام Windows", sysLink: "متطلبات النظام",
+      compat: "Windows 10 / 11 &nbsp;·&nbsp; 64 بت", figAria: "واجهة تطبيق Sela",
+      previewL: "داخل Sela", previewR: "سطح المكتب / Windows", cap: "واجهة تطبيق Sela. تعرّف عليه قبل أن تبدأ.",
+      instTitle: "ابدأ من هنا.", instP: "من التنزيل حتى الفتح. اتبع الخطوات التالية فقط.",
+      s1: 'انقر على <a href="#download">تنزيل لنظام Windows</a> أعلاه.',
+      s2: 'انتظر حتى يكتمل تنزيل الملف <strong class="filename">Sela_0.1.2_x64-setup.exe</strong>.',
+      s3: "افتح مجلد <strong>Downloads</strong> ثم انقر نقرًا مزدوجًا على ملف التثبيت.",
+      s4: "اتبع تعليمات التثبيت حتى النهاية ثم انقر على <strong>Finish</strong>.",
+      s5: "افتح <strong>Sela</strong> من قائمة ابدأ أو من أيقونة سطح المكتب.",
+      sysTitle: "وفّر مساحة<br>لـ Sela.", sysP: "تأكد من أن جهازك يستوفي المتطلبات قبل التنزيل.",
+      tblAria: "متطلبات نظام Sela", osK: "نظام التشغيل", osV: "Windows 10 أو 11", archK: "المعمارية",
+      ramK: "الذاكرة (RAM)", ramV: "4 غيغابايت على الأقل", spK: "المساحة الفارغة", spV: "حوالي 200 ميغابايت",
+      helpTitle: "تحتاج مساعدة؟", sum: "ظهرت رسالة “Windows protected your PC”؟",
+      ans: "تعني هذه الرسالة أن Windows لم يتعرف بعد على سمعة التطبيق، وهي ليست ضمانًا بأن الملف آمن. تأكد من أن ملف التثبيت من الرابط الرسمي في هذه الصفحة. إذا تحققت من المصدر والناشر، فاختر <strong>More info</strong> ثم <strong>Run anyway</strong>. وإذا كنت في شك، فألغِ التثبيت.",
+      copy: "© 2026 Sela. جميع الحقوق محفوظة.", footHelp: "مساعدة التثبيت"
+    },
+    ru: {
+      title: "Sela — Скачать для Windows", desc: "Скачайте Sela для Windows 10 и 11. Посмотрите приложение, инструкцию по установке и системные требования.",
+      skip: "Пропустить навигацию", navAria: "Главная навигация", brandAria: "Sela, главная", langLabel: "Язык",
+      navView: "Обзор", navInstall: "Установка", navDl: "Скачать",
+      release: "Sela для Windows · v0.1.2", h1: "Знакомьтесь:<br>Sela.",
+      lead: "Приложение для Windows, которое составит вам компанию. Скачивание бесплатно, установка займёт пару минут.",
+      dlBtn: "Скачать для Windows", dlAria: "Скачать Sela для Windows", sysLink: "Системные требования",
+      compat: "Windows 10 / 11 &nbsp;·&nbsp; 64-бит", figAria: "Внешний вид приложения Sela",
+      previewL: "Внутри Sela", previewR: "Компьютер / Windows", cap: "Внешний вид приложения Sela. Познакомьтесь до начала.",
+      instTitle: "Начните здесь.", instP: "От загрузки до запуска. Просто следуйте шагам ниже.",
+      s1: 'Нажмите <a href="#download">Скачать для Windows</a> выше.',
+      s2: 'Дождитесь завершения загрузки файла <strong class="filename">Sela_0.1.2_x64-setup.exe</strong>.',
+      s3: "Откройте папку <strong>Downloads</strong> и дважды щёлкните установщик.",
+      s4: "Следуйте подсказкам установщика до конца и нажмите <strong>Finish</strong>.",
+      s5: "Запустите <strong>Sela</strong> из меню «Пуск» или с ярлыка на рабочем столе.",
+      sysTitle: "Освободите место<br>для Sela.", sysP: "Перед загрузкой убедитесь, что ваше устройство соответствует требованиям.",
+      tblAria: "Системные требования Sela", osK: "Операционная система", osV: "Windows 10 или 11", archK: "Архитектура",
+      ramK: "ОЗУ", ramV: "Не менее 4 ГБ", spK: "Свободное место", spV: "Около 200 МБ",
+      helpTitle: "Нужна помощь?", sum: "Появилось «Windows protected your PC»?",
+      ans: "Это предупреждение означает, что Windows пока не знает репутацию приложения; оно не гарантирует, что файл безопасен. Убедитесь, что установщик скачан по официальной ссылке на этой странице. Если вы проверили источник и издателя, выберите <strong>More info</strong>, затем <strong>Run anyway</strong>. Если сомневаетесь, отмените установку.",
+      copy: "© 2026 Sela. Все права защищены.", footHelp: "Помощь с установкой"
+    }
+  };
+  var sel = document.getElementById("lang"), root = document.documentElement;
+  function apply(l) {
+    var d = T[l] || T.en;
+    root.lang = l; root.dir = l === "ar" ? "rtl" : "ltr";
+    document.title = d.title;
+    document.querySelectorAll("[data-i18n]").forEach(function (el) { var v = d[el.getAttribute("data-i18n")]; if (v != null) el.innerHTML = v; });
+    document.querySelectorAll("[data-i18n-attr]").forEach(function (el) {
+      el.getAttribute("data-i18n-attr").split(",").forEach(function (p) { var kv = p.split(":"); if (d[kv[1]] != null) el.setAttribute(kv[0], d[kv[1]]); });
+    });
+    sel.value = l;
+  }
+  var saved = "en";
+  try { var s = localStorage.getItem("sela-lang"); if (s && T[s]) saved = s; } catch (e) {}
+  if (saved !== "en") apply(saved);
+  sel.addEventListener("change", function () {
+    apply(sel.value);
+    try { localStorage.setItem("sela-lang", sel.value); } catch (e) {}
+  });
+})();
+</script>
 </body>
 </html>
