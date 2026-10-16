@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<!-- Design: twilight editorial layout; original Sela screenshot and release URL retained. -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Download Sela untuk Windows 10 dan 11. Lihat tampilan aplikasi, panduan instalasi, dan persyaratan sistem.">
+<title>Sela — Download untuk Windows</title>
+<style>
+  :root { color-scheme: light; --paper: #f7f7f7; --ink: #202027; --muted: #63636c; --blue: #0069df; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 28px; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.6 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: -.02em; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 5px; }
+  a:focus-visible, summary:focus-visible { outline: 3px solid var(--blue); outline-offset: 5px; }
+  h1, h2, p, figure { margin: 0; }
+  h1, h2 { font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif; font-weight: 400; letter-spacing: -.055em; line-height: 1.06; }
+  h2 { font-size: clamp(36px, 4vw, 48px); }
+  .wrap { width: min(1120px, calc(100% - 64px)); margin-inline: auto; }
+  .skip { position: absolute; top: -80px; left: 24px; z-index: 3; padding: 12px 20px; background: white; border-radius: 50px; }
+  .skip:focus { top: 12px; }
+  .hero { position: relative; padding: 26px 0 0; isolation: isolate; }
+  .hero::before { content: ""; position: absolute; inset: 0 0 110px; z-index: -1; background: radial-gradient(ellipse at 80% 10%, #c3c7ef88, transparent 55%), linear-gradient(165deg, #4168ad 0%, #8b86b5 43%, #d4a4b5 73%, #ebc1a5 100%); }
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 12px 14px 12px 22px; background: #fff; border: 1px solid #ffffff; border-radius: 24px; box-shadow: 0 0 0 4px #ffffff24; }
+  .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); font-size: 23px; font-weight: 600; letter-spacing: -.06em; }
+  .brand-mark { width: 31px; height: 31px; display: grid; place-items: center; border-radius: 50%; background: linear-gradient(145deg, #698de1, #9b88bb); color: white; font: italic 26px Georgia, serif; }
+  .nav-links { display: flex; align-items: center; gap: 28px; }
+  .nav-links a { color: var(--ink); font-size: 14px; font-weight: 500; }
+  .nav-links .nav-download { background: var(--paper); padding: 10px 19px; border-radius: 50px; }
+  .intro { display: grid; grid-template-columns: 1.1fr 1fr; align-items: end; gap: 80px; padding: 86px 22px 58px; color: white; }
+  .release { display: inline-block; border: 1px solid #ffffff70; border-radius: 50px; padding: 5px 13px; font-size: 14px; margin-bottom: 22px; }
+  h1 { font-size: clamp(58px, 6.8vw, 88px); }
+  .intro-copy { padding-bottom: 5px; }
+  .intro-copy p { max-width: 370px; font-size: 18px; line-height: 1.6; }
+  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin: 25px 0 14px; }
+  .button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 15px 23px; border-radius: 50px; background: var(--blue); color: white; font-size: 14px; font-weight: 600; }
+  .button:hover { background: #005ac2; text-decoration: none; }
+  .button svg { width: 17px; height: 17px; flex-shrink: 0; }
+  .intro .secondary { color: white; font-size: 14px; border-bottom: 1px solid #ffffff80; padding-block: 6px; }
+  .compatibility { font-size: 14px; }
+  .preview { padding: 12px; border-radius: 28px; background: #fff; box-shadow: 0 0 0 5px #ffffff33; }
+  .preview-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 6px 12px 15px; color: var(--muted); font-size: 14px; }
+  .preview-bar span:first-child { color: var(--ink); font-weight: 500; }
+  .preview img { display: block; width: 100%; height: auto; border-radius: 16px; background: var(--paper); }
+  figcaption { text-align: center; margin-top: 20px; font-size: 14px; color: var(--muted); }
+  .editorial { max-width: 900px; margin: 100px auto; display: grid; grid-template-columns: .85fr 1.15fr; gap: 80px; }
+  .section-intro p { color: var(--muted); margin-top: 20px; max-width: 280px; }
+  .steps { margin: 0; padding-left: 24px; }
+  .steps li { padding: 0 0 20px 12px; }
+  .steps li::marker { color: var(--muted); font-size: 14px; }
+  .steps li:last-child { padding-bottom: 0; }
+  strong { font-weight: 600; }
+  .filename { overflow-wrap: anywhere; }
+  .system { border-top: 1px solid #dedee3; padding-top: 64px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; padding: 15px 0; border-bottom: 1px solid #dedee3; vertical-align: top; }
+  th { color: var(--muted); font-weight: 400; width: 45%; padding-right: 18px; }
+  tr:first-child th, tr:first-child td { padding-top: 0; }
+  .help { max-width: 900px; margin: 0 auto 90px; padding: 35px 40px; background: white; border-radius: 26px; }
+  .help h2 { font-size: 36px; margin-bottom: 22px; }
+  summary { cursor: pointer; font-weight: 500; padding: 4px 0; }
+  details p { margin-top: 16px; color: var(--muted); max-width: 700px; }
+  footer { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 28px 0; border-top: 1px solid #dedee3; color: var(--muted); font-size: 14px; }
+  footer .brand { font-size: 22px; }
+  @media (max-width: 760px) {
+    .wrap { width: calc(100% - 36px); }
+    .hero { padding-top: 18px; }
+    .nav { gap: 16px; padding: 10px 12px 10px 16px; border-radius: 22px; flex-wrap: wrap; }
+    .nav-links { gap: 16px; }
+    .nav-links a { font-size: 14px; }
+    .nav-links .nav-download { padding: 8px 12px; }
+    .intro { grid-template-columns: 1fr; gap: 28px; padding: 56px 8px 40px; }
+    .intro-copy p { max-width: 440px; }
+    .release { margin-bottom: 18px; }
+    .hero::before { bottom: 65px; }
+    .preview { border-radius: 19px; padding: 7px; }
+    .preview img { border-radius: 12px; }
+    .preview-bar { font-size: 12px; padding: 5px 6px 11px; }
+    .editorial { grid-template-columns: 1fr; gap: 30px; margin: 64px auto; padding-inline: 8px; }
+    .section-intro p { max-width: none; margin-top: 14px; }
+    .system { padding-top: 45px; }
+    .help { margin-bottom: 60px; padding: 28px 24px; }
+    footer { align-items: flex-start; flex-direction: column; gap: 12px; }
+  }
+  @media (max-width: 390px) {
+    .nav { justify-content: center; }
+    .nav-links { width: 100%; justify-content: center; gap: 19px; }
+    .actions { gap: 12px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#download">Lewati navigasi</a>
+<header class="hero">
+  <div class="wrap">
+    <nav class="nav" aria-label="Navigasi utama">
+      <a class="brand" href="#download" aria-label="Sela, beranda"><span class="brand-mark" aria-hidden="true">s</span>Sela</a>
+      <div class="nav-links">
+        <a href="#tampilan">Tampilan</a>
+        <a href="#install">Cara install</a>
+        <a class="nav-download" href="#download">Download</a>
+      </div>
+    </nav>
+    <div class="intro" id="download">
+      <div>
+        <span class="release">Sela untuk Windows · v0.1.0</span>
+        <h1>Kenalan dengan<br>Sela.</h1>
+      </div>
+      <div class="intro-copy">
+        <p>Aplikasi untuk Windows, siap menemani harimu. Download gratis, install dalam hitungan menit.</p>
+        <div class="actions">
+          <a class="button" href="https://github.com/muhammadrifaldi65/test/releases/download/app/Sela_0.1.0_x64-setup.exe" aria-label="Download Sela untuk Windows">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 16v5h14v-5"/></svg>
+            Download untuk Windows
+          </a>
+          <a class="secondary" href="#syarat">Persyaratan sistem</a>
+        </div>
+        <div class="compatibility">Windows 10 / 11 &nbsp;·&nbsp; 64-bit</div>
+      </div>
+    </div>
+    <figure id="tampilan" aria-label="Tampilan aplikasi Sela">
+      <div class="preview">
+        <div class="preview-bar"><span>Di dalam Sela</span><span>Desktop / Windows</span></div>
+        <img src="https://github.com/user-attachments/assets/e30de7a2-8d51-4842-896e-65e4bf976f3b" alt="Tampilan aplikasi Sela" fetchpriority="high">
+      </div>
+      <figcaption>Tampilan aplikasi Sela. Kenali sebelum mulai.</figcaption>
+    </figure>
+  </div>
+</header>
+<main class="wrap">
+  <section class="editorial" id="install" aria-labelledby="install-title">
+    <div class="section-intro">
+      <h2 id="install-title">Mulai dari sini.</h2>
+      <p>Dari download sampai siap dibuka. Cukup ikuti langkah berikut.</p>
+    </div>
+    <ol class="steps">
+      <li>Klik <a href="#download">Download untuk Windows</a> di atas.</li>
+      <li>Tunggu hingga file <strong class="filename">Sela_0.1.0_x64-setup.exe</strong> selesai diunduh.</li>
+      <li>Buka folder <strong>Downloads</strong>, lalu klik dua kali file installer.</li>
+      <li>Ikuti petunjuk instalasi sampai selesai, lalu klik <strong>Finish</strong>.</li>
+      <li>Buka <strong>Sela</strong> dari Start Menu atau ikon di Desktop.</li>
+    </ol>
+  </section>
+  <section class="editorial system" id="syarat" aria-labelledby="system-title">
+    <div class="section-intro">
+      <h2 id="system-title">Siapkan ruang<br>untuk Sela.</h2>
+      <p>Pastikan perangkatmu memenuhi persyaratan sebelum mengunduh.</p>
+    </div>
+    <table aria-label="Persyaratan sistem Sela">
+      <tbody>
+        <tr><th scope="row">Sistem operasi</th><td>Windows 10 atau 11</td></tr>
+        <tr><th scope="row">Arsitektur</th><td>64-bit (x64)</td></tr>
+        <tr><th scope="row">RAM</th><td>Minimal 4 GB</td></tr>
+        <tr><th scope="row">Ruang kosong</th><td>Sekitar 200 MB</td></tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="help" id="bantuan" aria-labelledby="help-title">
+    <h2 id="help-title">Butuh bantuan?</h2>
+    <details>
+      <summary>Muncul “Windows protected your PC”?</summary>
+      <p>Peringatan ini berarti Windows belum mengenali reputasi aplikasi; bukan jaminan bahwa file aman. Pastikan installer berasal dari tautan resmi di halaman ini. Jika sumber dan penerbitnya sudah kamu verifikasi, pilih <strong>More info</strong>, lalu <strong>Run anyway</strong>. Jika ragu, batalkan instalasi.</p>
+    </details>
+  </section>
+</main>
+<footer class="wrap">
+  <a class="brand" href="#download">Sela</a>
+  <span>© 2026 Sela. Semua hak dilindungi.</span>
+  <a href="#bantuan">Bantuan instalasi</a>
+</footer>
+</body>
+</html>
